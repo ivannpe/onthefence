@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<title>Profile Page</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-blue-grey.css">
+<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
+</style>
+<body class="w3-theme-l5">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
+  <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+  <a href="/editprofile" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Edit Profile">Edit Profile</a>
+   <a href="/random" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Randomizer">Random from Saved Places</a>
+   <a href="/recommendation" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Randomizer">Random from Location</a>
+    <a href="/feedback" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="feedback">Feedback</a>
+  <a href= {{url}} class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="Log Out"> Log Out</a>
+ </div>
+</div>
+
+<!-- Navbar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Edit Profile</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large">Random from Saved Places</a>
+</div>
+
+<!-- Page Container -->
+<div class="w3-container w3-content" style="max-width:1400px;margin-top:80px">
+<!-- The Grid -->
+  <div class="w3-row">
+
+      <!-- Profile -->
+      <div class="w3-card-2 w3-round w3-white">
+        <div class="w3-container">
+         <h4 class="w3-center">{{name}}</h4>
+         <p class="w3-center"><img src="{{photo_url}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+         <hr>
+         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Location: {{location}}</p>
+         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> Age: {{age}}</p>
+        </div>
+      </div>
+      <br>
+
+      <!-- Accordion -->
+      <div class="w3-card-2 w3-round">
+        <div class="w3-white">
+          <button onclick="myFunction('Demo1')" class="w3-button w3-block w3-theme-l1 w3-left-align">Food</button>
+          <div id="Demo1" class="w3-hide w3-container">
+            <form method="post">
+              <ul class=restaurants>
+            {% for place in restaurant_list %}
+              <li>{{place}}   <i class="fa fa-trash"></i></li>
+            {% endfor %}
+
+          </ul>
+          <div class=restaurants>
+            <p>Add a restaurant <input type="text" name="food"></p>
+
+            <button class=norefresh>Submit</button>
+            <br></br>
+          </div>
+
+            </form>
+
+          </div>
+          <button onclick="myFunction('Demo2')" class="w3-button w3-block w3-theme-l1 w3-left-align">Entertainment</button>
+          <div id="Demo2" class="w3-hide w3-container">
+            <form method="post">
+              <ul class=entertainment>
+            {% for place in entertainment_list %}
+              <li>{{place}} <i class="fa fa-trash"></i></li>
+            {% endfor %}
+          </ul>
+          <div class=entertainment>
+            <p>Add a place<input type="text" name="entertainment"></p>
+            <button class=norefresh>Submit</button>
+              <br></br>
+          </div>
+            </form>
+          </div>
+
+          <button onclick="myFunction('Demo3')" class="w3-button w3-block w3-theme-l1 w3-left-align">Outdoors</button>
+          <div id="Demo3" class="w3-hide w3-container">
+            <form method="post">
+              <ul class=outdoors>
+            {% for place in outdoors_list %}
+              <li>{{place}}  <i class="fa fa-trash"></i></li>
+            {% endfor %}
+          </ul>
+          <div class=outdoors>
+            <p>Add an Outdoor Activity   <input type="text" name="outdoors"></p>
+            <button class=norefresh>Submit</button>
+              <br></br>
+          </div>
+            </form>
+           </div>
+<button onclick="myFunction('Demo4')" class="w3-button w3-block w3-theme-l1 w3-left-align">Indoors</button>
+          <div id="Demo4" class="w3-hide w3-container">
+            <form method="post">
+              <ul class=indoors>
+            {% for place in indoors_list %}
+              <li>{{place}} <i class="fa fa-trash"></i></li>
+            {% endfor %}
+          </ul>
+          <div class=indoors>
+            <p>Add an Indoors Activity   <input type="text" name="indoors"></p>
+            <button class=norefresh>Submit</button>
+              <br></br>
+          </div>
+            </form>
+          </div>
+          <button onclick="myFunction('Demo5')" class="w3-button w3-block w3-theme-l1 w3-left-align">At Home</button>
+          <div id="Demo5" class="w3-hide w3-container">
+            <form method="post">
+              <ul class=home>
+            {% for place in home_list %}
+              <li>{{place}} <i class="fa fa-trash"></i></li>
+            {% endfor %}
+          </ul>
+          <div class=home>
+            <p>Add an Activity to do at Home   <input type="text" name="home"></p>
+            <button class=norefresh>Submit</button>
+              <br></br>
+          </div>
+            </form>
+          </div>
+         </div>
+          </div>
+      <br>
+
+
+    <!-- End Left Column -->
+    </div>
+
+
+<!-- End Page Container -->
+</div>
+<br>
+
+
+<script>
+// Accordion
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-theme-d1";
+    } else {
+        x.className = x.className.replace("w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-theme-d1", "");
+    }
+}
+// Used to toggle the menu on smaller screens when clicking on the menu button
+function openNav() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src=/resources/profile-page.js> </script>
+
+</html>

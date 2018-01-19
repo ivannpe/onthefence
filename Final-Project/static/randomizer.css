@@ -1,0 +1,61 @@
+body {
+    background-image: url("/resources/whitepicketfencebgcopy.jpg");
+    background-color: #cccccc;
+    background-size: 100% 100%;
+}
+
+div {
+  justify-content: center;
+  align-items: center;
+  display:flex;
+  font-size: 50px;
+  color: White;
+}
+#dropdown{
+  width: auto;
+  height:45px;
+  font-size: 40px;
+}
+/*#top{
+
+}*/
+h1 {
+  color: black;
+  padding-top: 25%;
+  font-size: 50px;
+}
+
+button {
+  width: auto;
+  height:45px;
+  font-size: 25px;
+}
+
+/*.box {
+  margin-top: 365px;
+  display: flex;
+  text-align: center;
+  background-color: wht;
+  height: 63px;
+  width:auto;
+
+}*/
+
+#answers{
+  text-align: center;
+  font-size: 25px;
+  color: black;
+  display: block;
+}
+
+#box{
+  margin-top: 365px;
+  color: black;
+}
+iframe{
+  height: 400px;
+  width: 800px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

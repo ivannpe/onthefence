@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="/resources/randomizer.css">
+<style>
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #120A8F;
+  color: white;
+  text-align: center;
+  font-size: 19px;
+  padding: 10px;
+  width: 280px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.text {
+  display: inline-block;
+
+  font-size: 19px;
+  padding: 10px;
+  width: 280px;
+  border-radius: 4px;
+  margin: 5px;
+
+
+}
+</style>
+
+</head>
+<form action='/profile'>
+<button class="button"><span>Back To Profile</span></button>
+</form>
+
+<body>
+
+
+
+  <div>
+        <form method = "post">
+          <p>Want us to choose?:
+
+              <select name="category" id="dropdown">
+                  <option value="restaurants">Food</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="outdoors">Outdoors</option>
+                  <option value="indoors">Indoors</option>
+              </select>
+<!--
+        <input type="text" name="category"> -->
+        <input class="text" name="location" placeholder="Input Your Location">
+
+
+        <button class="button" style="vertical-align:middle"><span>Find Something To Do </span></button>
+        </form>
+
+
+
+  </div>
+
+
+</body>
+
+
+</html>

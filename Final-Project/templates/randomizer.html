@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="/resources/randomizer.css">
+<style>
+
+
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #120A8F;
+  color: white;
+  text-align: center;
+  font-size: 19px;
+  padding: 10px;
+  width: 280px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+
+</head>
+<form action='/profile'>
+<button class="button"><span>Back To Profile</span></button>
+</form>
+
+<body>
+
+
+
+  <div>
+        <form method = "post">
+          <p>On the Fence?:
+
+              <select name="category_answer" id="dropdown">
+                  <option value="Food">Food</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Outdoors">Outdoors</option>
+                  <option value="Indoors">Indoors</option>
+                  <option value="Home">At Home</option>
+              </select>
+        <button class="button" style="vertical-align:middle"><span>Find Something To Do </span></button>
+          <div id="top">
+
+
+
+
+         </div>
+
+
+        </form>
+  </div>
+
+  <div id= box>
+
+    {{random}}
+  </div>
+
+</body>
+
+
+</html>
